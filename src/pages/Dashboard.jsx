@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useQuiz } from '../context/QuizContext';
 import { getQuizzesByCategory, searchQuizzes, getFeaturedQuizzes } from '../data/quizIndex';
 import { categories } from '../data/topics';
+import { getStatsForDisplay } from '../utils/stats';
 import QuizCard from '../components/dashboard/QuizCard';
 import Filters from '../components/dashboard/Filters';
 import SearchBar from '../components/common/SearchBar';
@@ -12,6 +13,7 @@ const Dashboard = () => {
   const [quizzes, setQuizzes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [featuredQuizzes, setFeaturedQuizzes] = useState([]);
+  const stats = getStatsForDisplay();
 
   useEffect(() => {
     const loadQuizzes = async () => {
@@ -55,8 +57,8 @@ const Dashboard = () => {
               Welcome to BrainCheck
             </h1>
             <p className="text-xl text-navy-300 mb-6 leading-relaxed">
-              Challenge your knowledge with 100+ quizzes across various categories. 
-              From civic education to fun challenges, test yourself and track your progress.
+              Challenge your knowledge with {stats.totalQuizzes} quizzes across {stats.totalCategories} categories. 
+              From civic education to comprehensive India knowledge, test yourself and track your progress.
             </p>
             
             {/* Featured Quiz */}

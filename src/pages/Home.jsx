@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
 import Card from '../components/common/Card';
+import { getStatsForDisplay } from '../utils/stats';
 
 const Home = () => {
+  const stats = getStatsForDisplay();
+
   return (
     <div className="space-y-12">
       {/* Hero Section */}
@@ -16,8 +19,8 @@ const Home = () => {
               BrainCheck
             </h1>
             <p className="text-xl md:text-2xl text-navy-300 mb-8 leading-relaxed">
-              Challenge your mind with 100+ quizzes across various categories. 
-              From civic education to fun challenges, test your knowledge and track your progress.
+              Challenge your mind with {stats.totalQuizzes} quizzes across {stats.totalCategories} categories. 
+              From civic education to comprehensive India knowledge, test your knowledge and track your progress.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/dashboard">
@@ -40,10 +43,10 @@ const Home = () => {
         <Card className="hover:shadow-neon-lg transition-all duration-300">
           <Card.Content>
             <div className="text-4xl mb-4">🎯</div>
-            <Card.Title>100+ Quizzes</Card.Title>
+            <Card.Title>{stats.totalQuizzes} Quizzes</Card.Title>
             <Card.Description>
-              Explore quizzes across 9 different categories including civic education, 
-              science, history, technology, and more.
+              Explore quizzes across {stats.totalCategories} categories including civic education 
+              and comprehensive India knowledge.
             </Card.Description>
           </Card.Content>
         </Card>
@@ -75,13 +78,7 @@ const Home = () => {
       <div className="card p-8">
         <h2 className="text-3xl font-bold text-navy-100 mb-6 text-center">Explore Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {[
-            { name: 'Civic Education', icon: '🏛️', color: 'text-electric-blue-400' },
-            { name: 'Science', icon: '🔬', color: 'text-neon-cyan-400' },
-            { name: 'History', icon: '📜', color: 'text-accent-purple-400' },
-            { name: 'Technology', icon: '💻', color: 'text-success-green-400' },
-            { name: 'Fun & Games', icon: '🎉', color: 'text-warning-yellow-400' },
-          ].map((category, index) => (
+            {stats.categoriesWithQuizzes.map((category, index) => (
             <div key={index} className="text-center p-4 rounded-lg border border-navy-700 hover:border-electric-blue-500/50 transition-all duration-300">
               <div className="text-3xl mb-2">{category.icon}</div>
               <div className={`font-semibold ${category.color}`}>{category.name}</div>

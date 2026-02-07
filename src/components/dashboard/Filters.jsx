@@ -1,8 +1,11 @@
 import React from 'react';
 import { categories } from '../../data/topics';
+import { getStatsForDisplay } from '../../utils/stats';
 import Button from '../common/Button';
 
 const Filters = ({ selectedCategory, onCategoryChange }) => {
+  const stats = getStatsForDisplay();
+
   return (
     <div className="space-y-6">
       {/* Categories Filter */}
@@ -59,15 +62,15 @@ const Filters = ({ selectedCategory, onCategoryChange }) => {
         <div className="space-y-3">
           <div className="flex justify-between items-center text-sm">
             <span className="text-navy-300">Total Quizzes</span>
-            <span className="text-electric-blue-400 font-semibold">100+</span>
+            <span className="text-electric-blue-400 font-semibold">{stats.totalQuizzes}</span>
           </div>
           <div className="flex justify-between items-center text-sm">
             <span className="text-navy-300">Categories</span>
-            <span className="text-electric-blue-400 font-semibold">9</span>
+            <span className="text-electric-blue-400 font-semibold">{stats.totalCategories}</span>
           </div>
           <div className="flex justify-between items-center text-sm">
             <span className="text-navy-300">Questions</span>
-            <span className="text-electric-blue-400 font-semibold">1000+</span>
+            <span className="text-electric-blue-400 font-semibold">{stats.totalQuestions}</span>
           </div>
         </div>
       </div>
