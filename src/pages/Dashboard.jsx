@@ -79,7 +79,7 @@ const Dashboard = () => {
       {/* Search and Filters */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Filters Sidebar */}
-        <div className="lg:col-span-1">
+        <div className="lg:col-span-1 order-2 lg:order-1">
           <Filters 
             selectedCategory={selectedCategory}
             onCategoryChange={handleCategoryChange}
@@ -87,7 +87,7 @@ const Dashboard = () => {
         </div>
 
         {/* Main Content */}
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-3 order-1 lg:order-2">
           {/* Search Bar */}
           <div className="mb-6">
             <SearchBar 
@@ -100,9 +100,9 @@ const Dashboard = () => {
           {/* Results Info */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-2">
-              <span className="text-navy-300">Showing</span>
-              <span className="text-electric-blue-400 font-semibold">{quizzes.length}</span>
-              <span className="text-navy-300">quizzes</span>
+              <span className="text-navy-300 text-sm md:text-base">Showing</span>
+              <span className="text-electric-blue-400 font-semibold text-sm md:text-base">{quizzes.length}</span>
+              <span className="text-navy-300 text-sm md:text-base">quizzes</span>
             </div>
             {loading && <LoadingSpinner size="sm" />}
           </div>
@@ -110,11 +110,11 @@ const Dashboard = () => {
           {/* India Category Special Layout */}
           {selectedCategory === 'india' && !searchQuery && (
             <div>
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-navy-100 mb-2">India Knowledge Series</h2>
-                <p className="text-navy-300">Explore India's rich heritage, laws, history, and more through our comprehensive quiz modules</p>
+              <div className="text-center mb-6 md:mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-navy-100 mb-2">India Knowledge Series</h2>
+                <p className="text-navy-300 text-sm md:text-base">Explore India's rich heritage, laws, history, and more through our comprehensive quiz modules</p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {quizzes.map((quiz) => (
                   <QuizCard key={quiz.id} quiz={quiz} />
                 ))}
@@ -125,19 +125,19 @@ const Dashboard = () => {
           {/* Regular Quiz Grid */}
           {selectedCategory !== 'india' || searchQuery ? (
             loading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {[...Array(6)].map((_, index) => (
-                  <div key={index} className="card h-48 animate-pulse bg-navy-700/30"></div>
+                  <div key={index} className="card h-40 md:h-48 animate-pulse bg-navy-700/30 rounded-xl"></div>
                 ))}
               </div>
             ) : quizzes.length === 0 ? (
-              <div className="text-center py-12">
-                <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-xl font-semibold text-navy-200 mb-2">No quizzes found</h3>
-                <p className="text-navy-400">Try adjusting your search or filter criteria</p>
+              <div className="text-center py-8 md:py-12">
+                <div className="text-4xl md:text-6xl mb-4">🔍</div>
+                <h3 className="text-lg md:text-xl font-semibold text-navy-200 mb-2">No quizzes found</h3>
+                <p className="text-navy-400 text-sm md:text-base">Try adjusting your search or filter criteria</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {quizzes.map((quiz) => (
                   <QuizCard key={quiz.id} quiz={quiz} />
                 ))}

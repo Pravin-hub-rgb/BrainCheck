@@ -1,6 +1,9 @@
+/* stylelint-disable */
+/* Tailwind CSS directives - these are processed by Tailwind during build */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* stylelint-enable */
 
 /* Custom styles for dark navy theme */
 @layer base {
@@ -61,5 +64,34 @@
   
   .neon-border {
     @apply border-2 border-blue-500/50 shadow-lg;
+  }
+  
+  /* Mobile-specific utilities */
+  .touch-target {
+    @apply min-h-12 min-w-12;
+  }
+  
+  .mobile-padding {
+    @apply px-3 py-4;
+  }
+  
+  .mobile-spacing {
+    @apply space-y-3;
+  }
+  
+  .mobile-card {
+    @apply rounded-xl p-4;
+  }
+  
+  .mobile-text {
+    @apply text-sm leading-relaxed;
+  }
+  
+  .mobile-title {
+    @apply text-lg font-semibold;
+  }
+  
+  .mobile-subtitle {
+    @apply text-base font-medium;
   }
 }

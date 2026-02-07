@@ -166,22 +166,22 @@ const QuizPage = () => {
       </div>
 
       {/* Question Card */}
-      <div className="card p-8">
+      <div className="card p-6 sm:p-8">
         {/* Question */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-navy-100 mb-4">
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-lg sm:text-xl font-semibold text-navy-100 mb-4">
             {currentQuestion.question}
           </h2>
         </div>
 
         {/* Options */}
-        <div className="space-y-3 mb-6">
+        <div className="space-y-3 sm:space-y-4 mb-6">
           {currentQuestion.options.map((option, index) => {
             const isCorrect = index === currentQuestion.correctAnswer;
             const isSelected = selectedAnswer === index;
             const isSubmitted = isAnswerSubmitted;
 
-            let optionClass = "p-4 rounded-lg border-2 transition-all duration-300 cursor-pointer hover:bg-navy-700/50";
+            let optionClass = "p-4 sm:p-5 rounded-lg border-2 transition-all duration-300 cursor-pointer hover:bg-navy-700/50 min-h-12 sm:min-h-14";
             
             if (isSubmitted) {
               if (isSelected && isCorrect) {
@@ -204,7 +204,7 @@ const QuizPage = () => {
                 onClick={() => handleAnswerSelect(index)}
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-navy-100">{option}</span>
+                  <span className="text-navy-100 text-sm sm:text-base">{option}</span>
                   {isSubmitted && (
                     <span className="text-lg">
                       {isCorrect ? "✓" : isSelected ? "✗" : ""}
