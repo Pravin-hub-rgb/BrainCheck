@@ -1,4 +1,13 @@
 import indianCitizenData from './quizData/indian-citizen';
+import indiaConstitutionData from './quizData/india-constitution';
+import indiaLawsRightsData from './quizData/india-laws-rights';
+import indiaHistoryData from './quizData/india-history';
+import indiaGeographyData from './quizData/india-geography';
+import indiaGovernmentData from './quizData/india-government';
+import indiaSymbolsData from './quizData/india-symbols';
+import indiaCultureData from './quizData/india-culture';
+import indiaEconomyData from './quizData/india-economy';
+import indiaScienceData from './quizData/india-science';
 
 export const quizIndex = [
   {
@@ -16,129 +25,129 @@ export const quizIndex = [
     highScore: 0
   },
   {
-    id: "animal-quiz",
-    title: "Animal Kingdom Challenge",
-    category: "science",
-    difficulty: "easy",
-    questionsCount: 50,
-    description: "Test your knowledge about animals and wildlife",
-    icon: "🦁",
-    tags: ["Animals", "Wildlife", "Science", "Nature"],
-    dataFile: "animal-quiz.js",
-    featured: false,
-    estimatedTime: "10-15 minutes",
-    highScore: 0
-  },
-  {
-    id: "smarter-than-5yo-science",
-    title: "Are You Smarter Than 5 Yo? - Science Edition",
-    category: "fun",
-    difficulty: "easy",
-    questionsCount: 30,
-    description: "Fun science questions that test basic knowledge",
-    icon: "🧪",
-    tags: ["Science", "Fun", "Kids", "Basic"],
-    dataFile: "smarter-than-5yo-science.js",
-    featured: false,
-    estimatedTime: "5-10 minutes",
-    highScore: 0
-  },
-  {
-    id: "smarter-than-5yo-maths",
-    title: "Are You Smarter Than 5 Yo? - Maths Edition",
-    category: "fun",
-    difficulty: "easy",
-    questionsCount: 30,
-    description: "Basic math questions to test your fundamentals",
-    icon: "➗",
-    tags: ["Math", "Fun", "Kids", "Basic"],
-    dataFile: "smarter-than-5yo-maths.js",
-    featured: false,
-    estimatedTime: "5-10 minutes",
-    highScore: 0
-  },
-  {
-    id: "smarter-than-5th-grader",
-    title: "Are You Smarter Than a 5th Grader?",
-    category: "fun",
+    id: "india-constitution",
+    title: "Constitution & Fundamental Rights & Duties",
+    category: "india",
     difficulty: "medium",
-    questionsCount: 40,
-    description: "Test your knowledge against 5th-grade curriculum",
-    icon: "📚",
-    tags: ["School", "Education", "Fun", "Challenge"],
-    dataFile: "smarter-than-5th-grader.js",
-    featured: false,
-    estimatedTime: "8-12 minutes",
-    highScore: 0
-  },
-  {
-    id: "indian-history",
-    title: "Indian History Challenge",
-    category: "history",
-    difficulty: "medium",
-    questionsCount: 60,
-    description: "Explore India's rich historical journey",
+    questionsCount: 30,
+    description: "Test your knowledge of Indian Constitution, Fundamental Rights, and Fundamental Duties",
     icon: "🏛️",
-    tags: ["History", "India", "Culture", "Ancient"],
-    dataFile: "indian-history.js",
+    tags: ["India", "Constitution", "Fundamental Rights", "Fundamental Duties", "Civic", "Government"],
+    dataFile: "india-constitution.js",
     featured: false,
-    estimatedTime: "12-18 minutes",
+    estimatedTime: "8-10 minutes",
     highScore: 0
   },
   {
-    id: "world-geography",
-    title: "World Geography Master",
-    category: "geography",
-    difficulty: "medium",
-    questionsCount: 75,
-    description: "Test your knowledge of world countries and landmarks",
-    icon: "🌍",
-    tags: ["Geography", "World", "Countries", "Landmarks"],
-    dataFile: "world-geography.js",
-    featured: false,
-    estimatedTime: "15-20 minutes",
-    highScore: 0
-  },
-  {
-    id: "sports-challenge",
-    title: "Sports Trivia Challenge",
-    category: "sports",
+    id: "india-laws-rights",
+    title: "Important Laws, Rights & Everyday Citizen Knowledge",
+    category: "india",
     difficulty: "easy",
+    questionsCount: 30,
+    description: "Test your knowledge of important laws, rights, and everyday citizen knowledge in India",
+    icon: "⚖️",
+    tags: ["India", "Laws", "Rights", "Citizen Knowledge", "Legal", "Everyday Life"],
+    dataFile: "india-laws-rights.js",
+    featured: false,
+    estimatedTime: "6-8 minutes",
+    highScore: 0
+  },
+  {
+    id: "india-history",
+    title: "Key Historical Events",
+    category: "india",
+    difficulty: "medium",
     questionsCount: 45,
-    description: "Test your sports knowledge across various games",
-    icon: "⚽",
-    tags: ["Sports", "Games", "Athletics", "Fun"],
-    dataFile: "sports-challenge.js",
+    description: "Explore India's rich historical journey from ancient times to modern independence",
+    icon: "🏛️",
+    tags: ["India", "History", "Freedom Struggle", "Wars", "Independence", "Ancient"],
+    dataFile: "india-history.js",
     featured: false,
-    estimatedTime: "8-12 minutes",
+    estimatedTime: "10-12 minutes",
     highScore: 0
   },
   {
-    id: "bollywood-trivia",
-    title: "Bollywood Movie Trivia",
-    category: "entertainment",
-    difficulty: "easy",
-    questionsCount: 40,
-    description: "Test your knowledge of Indian cinema",
-    icon: "🎬",
-    tags: ["Movies", "Bollywood", "Entertainment", "India"],
-    dataFile: "bollywood-trivia.js",
-    featured: false,
-    estimatedTime: "8-12 minutes",
-    highScore: 0
-  },
-  {
-    id: "tech-trends",
-    title: "Technology Trends Quiz",
-    category: "technology",
+    id: "india-geography",
+    title: "Geography of India",
+    category: "india",
     difficulty: "medium",
-    questionsCount: 55,
-    description: "Stay updated with the latest tech developments",
-    icon: "💻",
-    tags: ["Technology", "Innovation", "Modern", "Digital"],
-    dataFile: "tech-trends.js",
+    questionsCount: 40,
+    description: "Explore India's diverse physical and political geography, from mountains to rivers to states",
+    icon: "🌍",
+    tags: ["India", "Geography", "Mountains", "Rivers", "States", "Climate", "Physical Geography"],
+    dataFile: "india-geography.js",
     featured: false,
-    estimatedTime: "10-15 minutes",
+    estimatedTime: "8-10 minutes",
+    highScore: 0
+  },
+  {
+    id: "india-government",
+    title: "Government & Polity Structure",
+    category: "india",
+    difficulty: "medium",
+    questionsCount: 35,
+    description: "Understand India's government structure, from Union to Local levels, and key constitutional bodies",
+    icon: "🏛️",
+    tags: ["India", "Government", "Polity", "Constitution", "Parliament", "Judiciary", "Executive"],
+    dataFile: "india-government.js",
+    featured: false,
+    estimatedTime: "8-10 minutes",
+    highScore: 0
+  },
+  {
+    id: "india-symbols",
+    title: "National Symbols, Anthem, Flag, Mottos",
+    category: "india",
+    difficulty: "easy",
+    questionsCount: 25,
+    description: "Learn about India's national symbols, anthem, flag, and mottos that represent our nation",
+    icon: "🇮🇳",
+    tags: ["India", "National Symbols", "Flag", "Anthem", "Motto", "Emblem", "Symbols"],
+    dataFile: "india-symbols.js",
+    featured: false,
+    estimatedTime: "5-7 minutes",
+    highScore: 0
+  },
+  {
+    id: "india-culture",
+    title: "Culture, Festivals, Heritage",
+    category: "india",
+    difficulty: "medium",
+    questionsCount: 35,
+    description: "Explore India's rich cultural diversity, festivals, and heritage sites",
+    icon: "🎭",
+    tags: ["India", "Culture", "Festivals", "Heritage", "Dance", "Music", "Art"],
+    dataFile: "india-culture.js",
+    featured: false,
+    estimatedTime: "8-10 minutes",
+    highScore: 0
+  },
+  {
+    id: "india-economy",
+    title: "Economy, Currency, Trade",
+    category: "india",
+    difficulty: "medium",
+    questionsCount: 30,
+    description: "Learn about India's economy, currency, trade, and economic development",
+    icon: "💰",
+    tags: ["India", "Economy", "Currency", "Trade", "GDP", "Development", "Finance"],
+    dataFile: "india-economy.js",
+    featured: false,
+    estimatedTime: "6-8 minutes",
+    highScore: 0
+  },
+  {
+    id: "india-science",
+    title: "Science & Technology",
+    category: "india",
+    difficulty: "medium",
+    questionsCount: 30,
+    description: "Explore India's achievements in science, technology, space, and innovation",
+    icon: "🔬",
+    tags: ["India", "Science", "Technology", "Space", "ISRO", "Innovation", "Research"],
+    dataFile: "india-science.js",
+    featured: false,
+    estimatedTime: "6-8 minutes",
     highScore: 0
   }
 ];
@@ -177,6 +186,24 @@ export const loadQuizData = async (quizId) => {
     switch (quizId) {
       case 'indian-citizen':
         return indianCitizenData;
+      case 'india-constitution':
+        return indiaConstitutionData;
+      case 'india-laws-rights':
+        return indiaLawsRightsData;
+      case 'india-history':
+        return indiaHistoryData;
+      case 'india-geography':
+        return indiaGeographyData;
+      case 'india-government':
+        return indiaGovernmentData;
+      case 'india-symbols':
+        return indiaSymbolsData;
+      case 'india-culture':
+        return indiaCultureData;
+      case 'india-economy':
+        return indiaEconomyData;
+      case 'india-science':
+        return indiaScienceData;
       default:
         throw new Error(`Quiz data not found for ${quizId}`);
     }

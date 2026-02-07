@@ -8,7 +8,7 @@ import SearchBar from '../components/common/SearchBar';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 
 const Dashboard = () => {
-  const { selectedCategory, searchQuery } = useQuiz();
+  const { selectedCategory, searchQuery, updateCategory, updateSearchQuery } = useQuiz();
   const [quizzes, setQuizzes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [featuredQuizzes, setFeaturedQuizzes] = useState([]);
@@ -35,11 +35,13 @@ const Dashboard = () => {
   }, [selectedCategory, searchQuery]);
 
   const handleCategoryChange = (category) => {
-    // This will be handled by the context
+    // Update the category in context
+    updateCategory(category);
   };
 
   const handleSearchChange = (query) => {
-    // This will be handled by the context
+    // Update the search query in context
+    updateSearchQuery(query);
   };
 
   return (
@@ -105,26 +107,43 @@ const Dashboard = () => {
             {loading && <LoadingSpinner size="sm" />}
           </div>
 
-          {/* Quiz Grid */}
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[...Array(6)].map((_, index) => (
-                <div key={index} className="card h-48 animate-pulse bg-navy-700/30"></div>
-              ))}
-            </div>
-          ) : quizzes.length === 0 ? (
-            <div className="text-center py-12">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold text-navy-200 mb-2">No quizzes found</h3>
-              <p className="text-navy-400">Try adjusting your search or filter criteria</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {quizzes.map((quiz) => (
-                <QuizCard key={quiz.id} quiz={quiz} />
-              ))}
+          {/* India Category Special Layout */}
+          {selectedCategory === 'india' && !searchQuery && (
+            <div>
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-navy-100 mb-2">India Knowledge Series</h2>
+                <p className="text-navy-300">Explore India's rich heritage, laws, history, and more through our comprehensive quiz modules</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {quizzes.map((quiz) => (
+                  <QuizCard key={quiz.id} quiz={quiz} />
+                ))}
+              </div>
             </div>
           )}
+          
+          {/* Regular Quiz Grid */}
+          {selectedCategory !== 'india' || searchQuery ? (
+            loading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[...Array(6)].map((_, index) => (
+                  <div key={index} className="card h-48 animate-pulse bg-navy-700/30"></div>
+                ))}
+              </div>
+            ) : quizzes.length === 0 ? (
+              <div className="text-center py-12">
+                <div className="text-6xl mb-4">🔍</div>
+                <h3 className="text-xl font-semibold text-navy-200 mb-2">No quizzes found</h3>
+                <p className="text-navy-400">Try adjusting your search or filter criteria</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {quizzes.map((quiz) => (
+                  <QuizCard key={quiz.id} quiz={quiz} />
+                ))}
+              </div>
+            )
+          ) : null}
         </div>
       </div>
     </div>
